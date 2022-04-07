@@ -1,0 +1,8 @@
+D:\Nanda Ayu Annisa\Project_PWEB\WebApplication1\WebApplication1\bin\WebApplication1.dll
+D:\Nanda Ayu Annisa\Project_PWEB\WebApplication1\WebApplication1\bin\WebApplication1.pdb
+D:\Nanda Ayu Annisa\Project_PWEB\WebApplication1\WebApplication1\bin\WebApplication1.xml
+D:\Nanda Ayu Annisa\Project_PWEB\WebApplication1\WebApplication1\obj\Debug\WebApplication1.Resources.resources
+D:\Nanda Ayu Annisa\Project_PWEB\WebApplication1\WebApplication1\obj\Debug\WebApplication1.vbproj.GenerateResource.Cache
+D:\Nanda Ayu Annisa\Project_PWEB\WebApplication1\WebApplication1\obj\Debug\WebApplication1.dll
+D:\Nanda Ayu Annisa\Project_PWEB\WebApplication1\WebApplication1\obj\Debug\WebApplication1.xml
+D:\Nanda Ayu Annisa\Project_PWEB\WebApplication1\WebApplication1\obj\Debug\WebApplication1.pdb

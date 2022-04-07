@@ -1,0 +1,54 @@
+﻿Imports System.Data
+Imports System.Data.SqlClient
+Partial Class page_emp_emp_info_job
+    Inherits System.Web.UI.Page
+
+    Protected Sub Page_Load(ByVal sender As Object, ByVal e As System.EventArgs) Handles Me.Load
+        Dim con As New SqlConnection
+        Dim xCommand As New SqlCommand
+        Dim sql As String
+        Dim empusername As String = Session("emp_username")
+
+        con.ConnectionString = "Data Source=.\SQLEXPRESS;AttachDbFilename=D:\Nanda Ayu Annisa\Project_PWEB\WebApplication1\WebApplication1\App_Data\Database1.mdf;Integrated Security=True;User Instance=True"
+        con.Open()
+
+        sql = "SELECT * FROM [employee] WHERE emp_username = '" + empusername + "'"
+        xCommand.Connection = con
+        xCommand.CommandText = sql
+        Dim emp_id As String = xCommand.ExecuteScalar
+        Session("emp_id") = emp_id
+
+        Label3.Text = empusername
+        Panel2.Visible = False
+        Panel1.Visible = False
+    End Sub
+
+    Protected Sub GridView1_SelectedIndexChanged(ByVal sender As Object, ByVal e As System.EventArgs) Handles GridView1.SelectedIndexChanged
+        Panel1.Visible = True
+        panggil_js.Text = GridView1.SelectedRow.Cells(1).Text
+        panggil_job.Text = GridView1.SelectedRow.Cells(2).Text
+
+        Dim con As New SqlConnection
+        Dim xCommand As New SqlCommand
+        Dim sql As String
+
+        con.ConnectionString = "Data Source=.\SQLEXPRESS;AttachDbFilename=D:\Nanda Ayu Annisa\Project_PWEB\WebApplication1\WebApplication1\App_Data\Database1.mdf;Integrated Security=True;User Instance=True"
+        con.Open()
+
+        sql = "SELECT app_id FROM [application] WHERE job_id = '" + panggil_job.Text + "'"
+        xCommand.Connection = con
+        xCommand.CommandText = sql
+        Dim job_id As String = xCommand.ExecuteScalar
+        Session("job_id") = job_id
+
+        panggil_status.Text = job_id
+    End Sub
+
+    Protected Sub Button1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button1.Click
+
+        SqlDataSource4.Update()
+
+        Response.Redirect("emp_info_job.aspx")
+    End Sub
+
+End Class
